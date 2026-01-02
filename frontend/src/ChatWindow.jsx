@@ -3,6 +3,12 @@ import "./ChatWindow.css";
 import Chat from "./Chat.jsx";
 import { MyContext } from "./MyContext.jsx";
 import { ScaleLoader } from "react-spinners";
+import down from './assets/down.png'
+import user from './assets/user.png'
+import setting from './assets/setting.png'
+import upgrade from './assets/upgrade.png'
+import logout from './assets/logout.png'
+import send from './assets/send.png'
 
 export const ChatWindow = () => {
   const {
@@ -69,12 +75,12 @@ export const ChatWindow = () => {
     <div className="chatWindow">
       <div className="navbar">
         <span className="logo">
-          KlordGPT <img src="src/assets/down.png" alt="" />
+          KlordGPT <img src={down} alt="" />
         </span>
         <div className="user_icon_div" onClick={() => setIsOpen(!isOpen)}>
           <span className="user_icon">
             {" "}
-            <img src="src/assets/user.png" alt="" />
+            <img src={user} alt="" />
           </span>
         </div>
       </div>
@@ -82,9 +88,9 @@ export const ChatWindow = () => {
       {
         isOpen && 
         <div className="dropdown">
-          <div className="dropDownItem"><img src="src/assets/setting.png" alt="" />Settings</div>
-          <div className="dropDownItem"><img src="src/assets/upgrade.png" alt="" />Upgrade Plane</div>
-          <div className="dropDownItem"><img src="src/assets/logout.png" alt="" />Logout</div>
+          <div className="dropDownItem"><img src={setting} alt="" />Settings</div>
+          <div className="dropDownItem"><img src={upgrade} alt="" />Upgrade Plane</div>
+          <div className="dropDownItem"><img src={logout} alt="" />Logout</div>
         </div>
       }
 
@@ -106,7 +112,7 @@ export const ChatWindow = () => {
             onKeyDown={(e) => (e.key === "Enter" ? getReply() : "")}
           />
           <div id="submit" onClick={getReply}>
-            <img src="src/assets/send.png" alt="" />
+            <img src={send} alt="" />
           </div>
         </div>
         <p className="info">

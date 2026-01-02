@@ -2,6 +2,9 @@ import React, { useContext, useEffect } from "react";
 import "./Sidebar.css";
 import { MyContext } from "./MyContext";
 import { v1 as uuidv1 } from "uuid";
+import kgpt from './assets/kgpt.png'
+import edit from './assets/edit.png'
+import trash from './assets/trash.png'
 
 export const Sidebar = () => {
   const {
@@ -85,8 +88,8 @@ export const Sidebar = () => {
   return (
     <section className="sidebar">
       <button onClick={createNewChat}>
-        <img src="src/assets/kgpt.png" alt="gpt logo" className="logo" />
-        <img src="src/assets/edit.png" alt="" className="edit" />
+        <img src={kgpt} alt="gpt logo" className="logo" />
+        <img src={edit} alt="" className="edit" />
       </button>
 
       <ul className="history">
@@ -99,7 +102,7 @@ export const Sidebar = () => {
             {thread.title}
 
             <img
-              src="src/assets/trash.png"
+              src={trash}
               alt=""
               className="delete"
               onClick={(e) => {
