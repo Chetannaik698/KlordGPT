@@ -15,9 +15,11 @@ export const Sidebar = () => {
     setPrevChats,
   } = useContext(MyContext);
 
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
   const getAllThreads = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/thread");
+      const response = await fetch(`${BACKEND_URL}/api/thread`);
       const res = await response.json();
       const filteredData = res.map((thread) => ({
         threadId: thread.threadId,
@@ -47,7 +49,7 @@ export const Sidebar = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8080/api/thread/${newThreadId}`
+        `${BACKEND_URL}/api/thread/${newThreadId}`
       );
       const res = await response.json();
       console.log(res);
@@ -62,7 +64,7 @@ export const Sidebar = () => {
   const deleteThread = async (threadId) => {
     try {
       const response = await fetch(
-        `http://localhost:8080/api/thread/${threadId}`,
+        `${BACKEND_URL}/api/thread/${threadId}`,
         { method: "DELETE" }
       );
       const res = response.json();

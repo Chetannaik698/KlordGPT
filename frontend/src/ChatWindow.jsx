@@ -46,9 +46,6 @@ export const ChatWindow = () => {
     setLoading(false);
   };
 
-  console.log("ENV:", import.meta.env);
-console.log("Backend URL:", import.meta.env.VITE_BACKEND_URL);
-
 
   useEffect(() => {
     if (promt && reply) {
